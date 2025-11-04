@@ -1,0 +1,218 @@
+
+html {
+  scroll-behavior: smooth;
+  font-family:Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #121212; 
+  color: #eee;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+.navbar a {
+  color: #eee;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: #ff9800;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar a {
+    margin: 10px 0;
+  }
+}
+.hero {
+  background: linear-gradient(to right, #222, #333);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ff9800;
+}
+.hero p {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+.btn-get-in-touch {
+  background-color: #ff9800;
+  color: #222;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-get-in-touch:hover {
+  transform: scale(1.1);
+  background-color: #e68900;
+}
+.about {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff9800;
+}
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+.skills {
+  padding: 80px 20px;
+  background-color: #222;
+  text-align: center;
+}
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ff9800;
+}
+
+.skills ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+.skills li {
+  background-color: #333;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.skills li:hover {
+  background-color: #ff9800;
+  color: #222;
+  cursor: pointer;
+  display:flex;
+}
+
+/* ---------------- Experience ---------------- */
+.experience {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.experience h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ff9800;
+}
+
+.experience .job {
+  margin-bottom: 20px;
+}
+
+.experience .job h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+.experience .job span {
+  color: #999;
+  font-style: italic;
+  display:flex;
+}
+
+/* ---------------- Contact ---------------- */
+.contact {
+  padding: 80px 20px;
+  background-color: #222;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff9800;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px #ff9800;
+}
+
+.contact-form button {
+  background-color: #ff9800;
+  color: #222;
+  padding: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
