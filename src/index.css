@@ -1,14 +1,17 @@
-
+/* Global Styles */
 html {
   scroll-behavior: smooth;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
-  background: #121212; 
+  background: #121212;
   color: #eee;
 }
+
+/* ---------------- Navbar ---------------- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,21 +22,26 @@ body {
   top: 0;
   z-index: 100;
   flex-wrap: wrap;
+  transition: all 0.3s ease;
 }
+
 .navbar a {
   color: #eee;
   text-decoration: none;
   margin: 0 15px;
   font-weight: 600;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
+
 .navbar a:hover {
   color: #ff9800;
 }
+
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -43,51 +51,126 @@ body {
     margin: 10px 0;
   }
 }
-.hero {
-  background: linear-gradient(to right, #222, #333);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  overflow: hidden;
-  position: absolute;
 
+/* ---------------- Hero ---------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 2rem;
+  text-align: left;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
 }
-.hero h1 {
+
+.intro {
+  max-width: 600px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.intro h1 {
   font-size: 3rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+}
+
+.intro .highlight {
+  color: yellow;
+}
+
+.intro h2 {
+  font-size: 1.5rem;
   color: #ff9800;
+  min-height: 2rem; /* prevent jump during typing effect */
+  margin-bottom: 1rem;
 }
-.hero p {
-  font-size: 1.3rem;
-  color: #ccc;
-  margin-bottom: 25px;
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
+
 .btn-get-in-touch {
-  background-color: #ff9800;
-  color: #222;
-  padding: 12px 25px;
-  border-radius: 50px;
-  font-weight: bold;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: black;
+  color: yellow;
+  border-radius: 5px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 .btn-get-in-touch:hover {
   transform: scale(1.1);
   background-color: #e68900;
 }
+
+/* Hero Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Hero */
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro h2 {
+    font-size: 1.3rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 1.1rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+  }
+
+  .btn-get-in-touch {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* ---------------- About ---------------- */
 .about {
   padding: 80px 20px;
   text-align: center;
   background-color: #1a1a1a;
+  animation: fadeInUp 1s ease forwards;
 }
+
 .about h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #ff9800;
 }
+
 .about p {
   max-width: 800px;
   margin: 0 auto;
@@ -95,11 +178,13 @@ body {
   line-height: 1.6;
   color: #ccc;
 }
+
+/* ---------------- Skills ---------------- */
 .skills {
   padding: 80px 20px;
-  background-color: #222;
   text-align: center;
 }
+
 .skills h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
@@ -119,14 +204,14 @@ body {
   background-color: #333;
   padding: 12px 25px;
   border-radius: 30px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .skills li:hover {
   background-color: #ff9800;
   color: #222;
   cursor: pointer;
-  display:flex;
+  transform: translateY(-5px);
 }
 
 /* ---------------- Experience ---------------- */
@@ -144,6 +229,12 @@ body {
 
 .experience .job {
   margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience .job:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
 }
 
 .experience .job h3 {
@@ -155,7 +246,7 @@ body {
 .experience .job span {
   color: #999;
   font-style: italic;
-  display:flex;
+  display: flex;
 }
 
 /* ---------------- Contact ---------------- */
@@ -163,6 +254,7 @@ body {
   padding: 80px 20px;
   background-color: #222;
   text-align: center;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .contact h2 {
@@ -186,6 +278,7 @@ body {
   border: none;
   outline: none;
   font-size: 1rem;
+  transition: box-shadow 0.3s ease;
 }
 
 .contact-form input:focus,
@@ -201,12 +294,12 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form button:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
 }
 
 /* ---------------- Footer ---------------- */
@@ -215,4 +308,24 @@ footer {
   color: white;
   text-align: center;
   padding: 30px 20px;
+}
+
+/* ---------------- Scroll Animations ---------------- */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+section:nth-child(1) {
+  animation-delay: 0.2s;
+}
+section:nth-child(2) {
+  animation-delay: 0.4s;
+}
+section:nth-child(3) {
+  animation-delay: 0.6s;
+}
+section:nth-child(4) {
+  animation-delay: 0.8s;
 }
